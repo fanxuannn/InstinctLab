@@ -6,18 +6,19 @@ using Unity.Collections;
 
 public class AABBCollisionSystem : JobComponentSystem
 {
+
+
     [BurstCompile]
     public struct AABBCollisionJob : IJobParallelFor
     {
         [ReadOnly] public NativeArray<AABB> Colliders;
-
         public void Execute(int i)
         {
             for (int j = i + 1; j < Colliders.Length; j++)
             {
                 if (RTSPhysics.Intersect(Colliders[i], Colliders[j]))
                 {
-                    Debug.Log("Collision Detected");
+                    Debug.Log("发生碰撞");
                 }
             }
         }
@@ -39,6 +40,7 @@ public class AABBCollisionSystem : JobComponentSystem
         var colliders = m_AABBGroup.ToComponentDataArray<AABB>(Allocator.TempJob);
         var aabbCollisionJob = new AABBCollisionJob
         {
+            
             Colliders = colliders,
         };
         var collisionJobHandle = aabbCollisionJob.Schedule(colliders.Length, 32);

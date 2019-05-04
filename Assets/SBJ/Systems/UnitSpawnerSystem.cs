@@ -95,7 +95,7 @@ public class UnitSpawnerSystem : JobComponentSystem
                     var instance = CommandBuffer.Instantiate(spawner.Prefab);
 
                      var position = math.transform(location.Value,
-                         new float3(x * 2, 0, y * 2));
+                         new float3(x * 2, 0.5f, y * 2));
 
                     //TODO: Eventually switch to the new Unity.Physics AABB 
                     var aabb = new AABB

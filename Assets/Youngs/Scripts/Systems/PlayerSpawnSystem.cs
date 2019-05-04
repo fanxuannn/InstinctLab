@@ -29,7 +29,14 @@ namespace ILab.Youngs
             [BurstCompile]
             public void Execute(Entity entity, int index, [ReadOnly] ref PlayerSpawner spawner, [ReadOnly] ref LocalToWorld location)
             {
-             
+                var position =  location.Position;
+                var aabb = new AABB
+                {
+                    //0.5f will represent halfwidth for now
+                    max = position + 0.5f,
+                    min = position - 0.5f,
+
+                };
                 Entity instance = CommandBuffer.Instantiate(index, spawner.entity);
 
                 CommandBuffer.AddComponent(index, instance, new PlayerData { moveSpeed = 5f, respawnPosition = new float3(0, 0, 0) });
@@ -38,6 +45,10 @@ namespace ILab.Youngs
                 CommandBuffer.SetComponent(index, instance, new Translation { Value = new float3(0, 5f, 0) });
 
                 CommandBuffer.DestroyEntity(index, entity); //摧毁生成器,可以有多种其他的实现方式,前期开发简单摧毁即可
+
+                CommandBuffer.AddComponent(index, instance, aabb);
+
+
             }
         }
 
