@@ -66,8 +66,12 @@
     <Compile Include="Assets\Youngs\Scripts\basics\GameLuncher.cs" />
     <Compile Include="Assets\Youngs\Scripts\basics\ILabBootstrap.cs" />
     <Compile Include="Assets\Youngs\Scripts\basics\ILabSettings.cs" />
+    <Compile Include="Assets\Youngs\Scripts\Components\EnemyDataComponent.cs" />
+    <Compile Include="Assets\Youngs\Scripts\Components\EnemySpawnerComponent.cs" />
     <Compile Include="Assets\Youngs\Scripts\Components\HexCellComponent.cs" />
     <Compile Include="Assets\Youngs\Scripts\Components\PlayerDataComponents.cs" />
+    <Compile Include="Assets\Youngs\Scripts\Components\PlayerSpawnerComponent1.cs" />
+    <Compile Include="Assets\Youngs\Scripts\Proxy\EnemyProxy.cs" />
     <Compile Include="Assets\Youngs\Scripts\Proxy\HexCellProxy.cs" />
     <Compile Include="Assets\Youngs\Scripts\Proxy\PlayerProxy.cs" />
     <Compile Include="Assets\Youngs\Scripts\Systems\CameraFollowSystem.cs" />
@@ -75,6 +79,7 @@
     <Compile Include="Assets\Youngs\Scripts\Systems\HexMapGenerateSystem.cs" />
     <Compile Include="Assets\Youngs\Scripts\Systems\PlayerInputSystem.cs" />
     <Compile Include="Assets\Youngs\Scripts\Systems\PlayerMoveSystem.cs" />
+    <Compile Include="Assets\Youngs\Scripts\Systems\PlayerSpawnSystem.cs" />
     <Compile Include="Assets\Youngs\Scripts\Systems\RunFixedUpdateSystems.cs" />
     <Compile Include="Assets\Youngs\Scripts\Systems\TopologyProcessSystem.cs" />
     <Compile Include="Assets\Youngs\Scripts\Utils\BlittableBool.cs" />
