@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\HexMapSpawner.cs" />
+    <Compile Include="Assets\shehaolilei\NewBehaviourScript.cs" />
     <Compile Include="Assets\Youngs\Scripts\basics\GameLuncher.cs" />
     <Compile Include="Assets\Youngs\Scripts\basics\ILabBootstrap.cs" />
     <Compile Include="Assets\Youngs\Scripts\basics\ILabSettings.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Youngs\Scripts\Components\HexCellComponent.cs" />
     <Compile Include="Assets\Youngs\Scripts\Components\PlayerDataComponents.cs" />
     <Compile Include="Assets\Youngs\Scripts\Components\PlayerSpawnerComponent1.cs" />
+    <Compile Include="Assets\Youngs\Scripts\Monobehaviour\GameFXManager.cs" />
     <Compile Include="Assets\Youngs\Scripts\Proxy\EnemyProxy.cs" />
     <Compile Include="Assets\Youngs\Scripts\Proxy\HexCellProxy.cs" />
     <Compile Include="Assets\Youngs\Scripts\Proxy\PlayerProxy.cs" />

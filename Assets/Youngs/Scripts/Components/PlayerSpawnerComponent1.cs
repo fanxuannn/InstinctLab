@@ -8,7 +8,6 @@ namespace ILab.Youngs
         /* 存储玩家可能的所有的模型 */
         public Entity entity;
 
-
     }
 
 }

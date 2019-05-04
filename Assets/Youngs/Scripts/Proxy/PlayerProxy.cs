@@ -26,18 +26,21 @@ namespace ILab.Youngs
         public float3 m_respawnPosition;
         public float m_playerMoveSpeed;
 
-        public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
-        {
-            dstManager.AddComponentData(entity,new PlayerSpawner {
-                entity = conversionSystem.GetPrimaryEntity(gameObject)
-            });
-           
-        }
-
+        
         public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
         {
             referencedPrefabs.Add(gameObject);
         }
 
+
+        public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
+        {
+
+            dstManager.AddComponentData(entity, new PlayerSpawner
+            {
+                entity = conversionSystem.GetPrimaryEntity(gameObject)
+            });
+
+        }
     }
 }

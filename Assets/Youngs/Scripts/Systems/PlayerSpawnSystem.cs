@@ -15,7 +15,7 @@ namespace ILab.Youngs
     {
         BeginInitializationEntityCommandBufferSystem m_EntityCommandBufferSystem;
 
-        protected override void OnCreate()
+        protected override void OnCreate()  
         {
             //Enabled = SceneManager.GetActiveScene().name.StartsWith("HelloCube_08");
 
@@ -29,22 +29,26 @@ namespace ILab.Youngs
             [BurstCompile]
             public void Execute(Entity entity, int index, [ReadOnly] ref PlayerSpawner spawner, [ReadOnly] ref LocalToWorld location)
             {
+             
                 Entity instance = CommandBuffer.Instantiate(index, spawner.entity);
 
-                CommandBuffer.AddComponent(index,instance, new PlayerData {moveSpeed =5f,respawnPosition=new float3(0,0,0) });
+                CommandBuffer.AddComponent(index, instance, new PlayerData { moveSpeed = 5f, respawnPosition = new float3(0, 0, 0) });
                 CommandBuffer.AddComponent(index, instance, new PlayerInput { });
-                CommandBuffer.SetComponent(index, instance, new Translation { Value =new float3(0,0,0) });
-               
+            
+                CommandBuffer.SetComponent(index, instance, new Translation { Value = new float3(0, 5f, 0) });
+
                 CommandBuffer.DestroyEntity(index, entity); //摧毁生成器,可以有多种其他的实现方式,前期开发简单摧毁即可
             }
         }
 
+
         protected override JobHandle OnUpdate(JobHandle inputDependencies)
         {
-           
+
             var job = new SpawnJob
             {
                 CommandBuffer = m_EntityCommandBufferSystem.CreateCommandBuffer().ToConcurrent()
+
             }.Schedule(this, inputDependencies);
 
           
